@@ -1,5 +1,5 @@
 %define upstream_name    Dist-Zilla-Plugin-MetaData-BuiltWith
-%define upstream_version 0.01005122
+%define upstream_version 0.01018204
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -14,6 +14,7 @@ Source0:    http://www.cpan.org/modules/by-module/Dist/%{upstream_name}-%{upstre
 BuildRequires: perl(Carp)
 BuildRequires: perl(Dist::Zilla::Role::ConfigDumper)
 BuildRequires: perl(Dist::Zilla::Role::MetaProvider)
+BuildRequires: perl(Dist::Zilla::Util::EmulatePhase)
 BuildRequires: perl(File::Find)
 BuildRequires: perl(File::Temp)
 BuildRequires: perl(Module::Build)
