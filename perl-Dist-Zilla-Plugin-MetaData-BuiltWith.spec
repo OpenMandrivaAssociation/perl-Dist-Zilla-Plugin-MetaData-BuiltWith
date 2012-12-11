@@ -1,29 +1,29 @@
 %define upstream_name    Dist-Zilla-Plugin-MetaData-BuiltWith
 %define upstream_version 0.01018204
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	3
 
-Summary:    Go overkill and report everything in all name-spaces
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Dist/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Go overkill and report everything in all name-spaces
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Dist/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Carp)
-BuildRequires: perl(Dist::Zilla::Role::ConfigDumper)
-BuildRequires: perl(Dist::Zilla::Role::MetaProvider)
-BuildRequires: perl(Dist::Zilla::Util::EmulatePhase)
-BuildRequires: perl(File::Find)
-BuildRequires: perl(File::Temp)
-BuildRequires: perl(Module::Build)
-BuildRequires: perl(Moose)
-BuildRequires: perl(Test::More)
-BuildRequires: perl(namespace::autoclean)
-BuildRequires: perl(Module::Build)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Carp)
+BuildRequires:	perl(Dist::Zilla::Role::ConfigDumper)
+BuildRequires:	perl(Dist::Zilla::Role::MetaProvider)
+BuildRequires:	perl(Dist::Zilla::Util::EmulatePhase)
+BuildRequires:	perl(File::Find)
+BuildRequires:	perl(File::Temp)
+BuildRequires:	perl(Module::Build)
+BuildRequires:	perl(Moose)
+BuildRequires:	perl(Test::More)
+BuildRequires:	perl(namespace::autoclean)
+BuildRequires:	perl(Module::Build)
+BuildArch:	noarch
 
 %description
 Often, distribution authors get module dependencies wrong. So in such
@@ -41,24 +41,17 @@ install in the event of a problem.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Build.PL installdirs=vendor
-
+perl Build.PL installdirs=vendor
 ./Build
 
 %check
 ./Build test
 
 %install
-rm -rf %buildroot
 ./Build install destdir=%{buildroot}
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes LICENSE META.json META.yml README
 %{_mandir}/man3/*
-%perl_vendorlib/*
-
+%{perl_vendorlib}/*
 
