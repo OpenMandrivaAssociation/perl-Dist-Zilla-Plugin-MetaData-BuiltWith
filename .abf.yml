@@ -1,2 +1,4 @@
+removed_sources:
+  Dist-Zilla-Plugin-MetaData-BuiltWith-0.01018204.tar.gz: e0f1c01c29e317d74aa1ed2b8fabe58e9ec42cf5
 sources:
-  "Dist-Zilla-Plugin-MetaData-BuiltWith-0.01018204.tar.gz": e0f1c01c29e317d74aa1ed2b8fabe58e9ec42cf5
+  Dist-Zilla-Plugin-MetaData-BuiltWith-0.04000002.tar.gz: d8e6ecea701eb1392794241fa88ca14736b73c64
