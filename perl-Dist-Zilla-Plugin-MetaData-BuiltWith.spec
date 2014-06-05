@@ -1,11 +1,12 @@
 %define upstream_name    Dist-Zilla-Plugin-MetaData-BuiltWith
-%define upstream_version 0.04000002
+%define upstream_version 1.000000
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
 Release:	1
 
 Summary:	Go overkill and report everything in all name-spaces
+
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
@@ -56,5 +57,6 @@ perl Build.PL installdirs=vendor
 %doc Changes LICENSE META.json META.yml README
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
+
 
 
