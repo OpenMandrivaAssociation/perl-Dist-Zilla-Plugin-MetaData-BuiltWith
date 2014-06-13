@@ -8,6 +8,7 @@ Release:	1
 Summary:	Go overkill and report everything in all name-spaces
 
 
+
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
@@ -57,6 +58,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %doc Changes LICENSE META.json META.yml README
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
+
 
 
 
