@@ -1,9 +1,7 @@
 %define upstream_name    Dist-Zilla-Plugin-MetaData-BuiltWith
-%define upstream_version 1.004005
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.004005
+Release:	2
 
 Summary:	Go overkill and report everything in all name-spaces
 
@@ -12,7 +10,7 @@ Summary:	Go overkill and report everything in all name-spaces
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/kentnl/Dist-Zilla-Plugin-MetaData-BuiltWith
-Source0:	https://cpan.metacpan.org/authors/id/K/KE/KENTNL/Dist-Zilla-Plugin-MetaData-BuiltWith-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/K/KE/KENTNL/Dist-Zilla-Plugin-MetaData-BuiltWith-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -43,7 +41,7 @@ users on their end machines make intelligent choices about what modules to
 install in the event of a problem.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
